@@ -28,7 +28,7 @@ def MatrixMul(matrixA, matrixB):
 # Size of the cube
 size = 100
 
-# Define the cube's verticese
+# Define the cube's vertices
 points = [
   [[-size / 2], [size / 2], [size / 2]],
   [[size / 2], [size / 2], [size / 2]],
