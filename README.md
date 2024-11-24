@@ -1,6 +1,8 @@
 # 3D-Rendering
 A simple program that shows you a rotating 3D cube in 2D.
 
+![]([https://github.com/Your_Repository_Name/Your_GIF_Name.gif](https://github.com/DanielNStovell/3D-Rendering/blob/main/3D%20Projection%20Demo.gif))
+
 ## Description
 I made this in Desmos, but I had trouble changing it from Orthographic to Perspective, so I decided to do it in Python.
 
