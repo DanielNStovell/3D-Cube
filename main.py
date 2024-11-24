@@ -41,6 +41,7 @@ points = [
   [[-size / 2], [-size / 2], [-size / 2]],
   ]
 
+# Initial angle
 angle = 0.05
 
 # Function to calculate the X-axis rotation matrix
