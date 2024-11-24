@@ -53,8 +53,8 @@ def Xrotation(angle):
   [0, math.sin(radDegree), math.cos(radDegree)]
   ]
 
-# Function to calculate the Y-axis rotation matrix
-def Yrotation(angle):
+# Function to calculate the Z-axis rotation matrix
+def Zrotation(angle):
   radDegree = angle * math.pi/180 # Convert angle to radians
   return [
   [math.cos(radDegree), -math.sin(radDegree), 0],
@@ -62,8 +62,8 @@ def Yrotation(angle):
   [0, 0, 1]
   ]
 
-# Function to calculate the Z-axis rotation matrix
-def Zrotation(angle):
+# Function to calculate the Y-axis rotation matrix
+def Yrotation(angle):
   radDegree = angle * math.pi/180 # Convert angle to radians
   return [
   [math.cos(radDegree), 0, math.sin(radDegree)],
