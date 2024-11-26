@@ -1,4 +1,4 @@
-# 3D-Rendering
+# 3D-Cube
 A simple program that shows you a rotating 3D cube in 2D.
 
 ![](https://github.com/DanielNStovell/3D-Rendering/blob/main/3D%20Projection%20Demo.gif)
