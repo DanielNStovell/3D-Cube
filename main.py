@@ -41,9 +41,6 @@ points = [
   [[-size / 2], [-size / 2], [-size / 2]],
   ]
 
-# Initial angle
-angle = 0.05
-
 # Function to calculate the X-axis rotation matrix
 def Xrotation(angle):
   radDegree = angle * math.pi/180 # Convert angle to radians
@@ -78,6 +75,9 @@ connections = [
   (0, 4), (1, 5), (2, 6), (3, 7), # Edges connecting front and back
 ]
 
+# Define the cube's orientation as an identity matrix
+orientation = [[1,0,0],[0,1,0],[0,0,1]]
+
 while running:
   for event in pygame.event.get():
     if event.type == pygame.QUIT:
@@ -85,15 +85,20 @@ while running:
 
   screen.fill(black)
 
+  # Create rotations around the X, Y, and Z axis
+  rotationStep = MatrixMul(Xrotation(0.01), Yrotation(0.01))
+  rotationStep = MatrixMul(rotationStep, Zrotation(0))
+
+  # Update the cube's orientation to apply the rotation steps
+  orientation = MatrixMul(rotationStep, orientation)
+
   # List to store the rotated and projected points
   rotatedPoints = []
 
   # Rotate and project each point (vertex) in 3D space
   for point in points:
     # Apply X, Y, and Z rotations
-    rotated = MatrixMul(Xrotation(angle), point)
-    rotated = MatrixMul(Yrotation(angle), rotated)
-    rotated = MatrixMul(Zrotation(angle), rotated)
+    rotated = MatrixMul(orientation, point)
 
     # Calculate perspective projection
     z = 200 / (200 - rotated[2][0])
@@ -124,9 +129,6 @@ while running:
 
     # Draw the edge as a line
     pygame.draw.line(screen, white, (startX, startY), (endX, endY), 1)
-
-  # Increment the rotation angle for continuous rotation
-  angle += 0.05
 
   pygame.display.flip()
 
